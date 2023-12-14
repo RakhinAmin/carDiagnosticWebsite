@@ -14,20 +14,21 @@ from pathlib import Path
 import environ
 from datetime import timedelta
 
-venv = environ.Env(DEBUG=(bool, False))
+
+env = environ.Env(DEBUG=(bool, False))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-environ.Env.read_env(BASE_DIR / '.venv')
+environ.Env.read_env(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fwemtnt8)wg%o(1cdb*a+#_=a+)nlo#ih4q9#-7jbbz_@251hh'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -50,7 +51,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'djoser',
-    'rest_framework_simple_jwt',
+    'rest_framework_simplejwt',
 
     'users',
 ]
@@ -151,7 +152,7 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': (
         'Bearer',
         'JWT'),
-    'ACCCESS_TOKEN_LIFETIME': timedelta(minutes=120),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=120),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=60),
     'SIGNING_KEY': env("SIGNING_KEY"),
     'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
