@@ -32,6 +32,21 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+
+CORS_EXPOSE_HEADERS = [
+    "Access-Control-Allow-Origin",
+]
+
+
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5173',
     'http://localhost:5173',
