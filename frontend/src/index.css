@@ -88,7 +88,7 @@ section > h2 {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  border: 1px orange;
+  border: 1px pink;
   border-radius: 4px;
   cursor: pointer;
   transition: var(--transition);
@@ -368,12 +368,12 @@ img {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  border: 1px solid #ff4500;
+  border: 1px solid #fdd62e;
   border-radius: 4px;
   cursor: pointer;
   transition: all 400ms ease;
 
-  background-color: #ff4500;
+  background-color: #fdd62e;
   color: #ffffff;
 }
 
@@ -381,5 +381,5 @@ img {
 .rectangle-container button:focus {
   opacity: 0.8;
   outline: none;
-  background-color: #cc3700;
+  background-color: #fdd62e;
 }

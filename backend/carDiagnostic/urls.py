@@ -14,11 +14,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# Importing necessary modules from Django
 from django.contrib import admin
+# Path defines the route of a URL to the corresponding page, include defines any external URL configurations
 from django.urls import path, include
 
+# Defining URL patterns for the Django application
 urlpatterns = [
+    # Admin page URL
     path('admin/', admin.site.urls),
+
+    # API endpoints for authentication using Djoser
     path('api/v1/auth/', include('djoser.urls')),
+
+    # Additional API endpoints for JWT authentication using Djoser
     path('api/v1/auth/', include('djoser.urls.jwt')),
 ]

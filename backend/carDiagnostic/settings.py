@@ -163,6 +163,7 @@ REST_FRAMEWORK = {
     ),
 }
 
+# JSON Web Token Authentication package
 SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": (
         "Bearer",
@@ -174,6 +175,7 @@ SIMPLE_JWT = {
     "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
 }
 
+# DJOSER settings for user authentication and management
 DJOSER = {
     'LOGIN_FIELD': 'email',
     "USER_CREATE_PASSWORD_RETYPE": True,
