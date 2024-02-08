@@ -21,7 +21,8 @@ import NotFoundPage from "./pages/notFound/NotFound";
 import BrakesPage from "./pages/questions/brakes";
 import SmokyExhaustPage from "./pages/questions/smokyExhaust";
 import AccelerationPage from "./pages/questions/acceleration";
-import SmellsFuelPage from "./pages/questions/smells";
+import SmellsPage from "./pages/questions/smells";
+import BrakeResponse from "./components/response/BrakeResponse";
 
 // Main component representing the entire application
 function App() {
@@ -64,10 +65,12 @@ function App() {
 
           <Route path="/acceleration" element={<AccelerationPage />} />
 
-          <Route path="/smells" element={<SmellsFuelPage />} />
+          <Route path="/smells" element={<SmellsPage />} />
 
           {/* Route for handling any undefined or non-existent routes */}
           <Route path="*" element={<NotFoundPage />} />
+
+          <Route path="/brakeresponse" element={<BrakeResponse />} />
         </Routes>
       </Router>
 

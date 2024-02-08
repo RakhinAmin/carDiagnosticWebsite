@@ -16,7 +16,7 @@ Including another URLconf
 """
 # Importing necessary modules from Django
 from django.contrib import admin
-# Path defines the route of a URL to the corresponding page, include defines any external URL configurations
+# Path defines the route of a URL to the corresponding page
 from django.urls import path, include
 
 # Defining URL patterns for the Django application
@@ -27,6 +27,7 @@ urlpatterns = [
     # API endpoints for authentication using Djoser
     path('api/v1/auth/', include('djoser.urls')),
 
-    # Additional API endpoints for JWT authentication using Djoser
-    path('api/v1/auth/', include('djoser.urls.jwt')),
+    # API endpoint for question responses
+    path('api/v1/questions/', include('questions.urls')),
+
 ]

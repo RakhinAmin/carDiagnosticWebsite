@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
 
     'users',
+    'questions',
 ]
 
 MIDDLEWARE = [
@@ -106,11 +107,33 @@ WSGI_APPLICATION = 'carDiagnostic.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+'''
+
+DATABASES = {
+
+    'default': {
+
+        'ENGINE': 'django.db.backends.postgresql',
+
+        'NAME': 'cardiagnostics',
+
+        'USER': 'Rakhin',
+
+        'PASSWORD': 'Custardviper-312',
+
+        'HOST': 'car-diagnostics.cf466a6iodj9.eu-north-1.rds.amazonaws.com',
+
+        'PORT': '5432',
+
+    }
+
 }
 
 
