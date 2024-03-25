@@ -1,0 +1,22 @@
+/* App.css */
+
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background-color: #dedbc8; /* Set the background color for the entire page */
+}
+
+.container {
+  max-width: 800px; /* Adjust the maximum width of your container as needed */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 5px; /* Add some padding to the container */
+}
+.home-page__container {
+  margin-top: 2px;
+}
+
+.main__title {
+  color: #333; /* Set the color of the main title */
+}
+
+/* Add additional styles for your RegistrationPlate component if needed */

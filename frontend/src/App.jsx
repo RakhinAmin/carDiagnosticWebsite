@@ -18,11 +18,7 @@ import ResetPasswordPage from "./pages/resetPassword/ResetPassword";
 import ResetPasswordPageConfirm from "./pages/resetPassword/ConfirmResetPassword";
 import ActivatePage from "./pages/activateAccount/ActivateAccount";
 import NotFoundPage from "./pages/notFound/NotFound";
-import BrakesPage from "./pages/questions/brakes";
-import SmokyExhaustPage from "./pages/questions/smokyExhaust";
-import AccelerationPage from "./pages/questions/acceleration";
-import SmellsPage from "./pages/questions/smells";
-import BrakeResponse from "./components/response/BrakeResponse";
+import { Questions } from "./pages/questions/Questions";
 
 // Main component representing the entire application
 function App() {
@@ -37,6 +33,8 @@ function App() {
         <Routes>
           {/* Route for the home page */}
           <Route path="/" element={<HomePage />} />
+
+          <Route path="/questions" element={<Questions />} />
 
           {/* Route for the login page */}
           <Route path="/login" element={<LoginPage />} />
@@ -59,18 +57,8 @@ function App() {
           {/* Route for the user dashboard */}
           <Route path="/dashboard" element={<Dashboard />} />
 
-          <Route path="/brakes" element={<BrakesPage />} />
-
-          <Route path="/smokyexhaust" element={<SmokyExhaustPage />} />
-
-          <Route path="/acceleration" element={<AccelerationPage />} />
-
-          <Route path="/smells" element={<SmellsPage />} />
-
           {/* Route for handling any undefined or non-existent routes */}
           <Route path="*" element={<NotFoundPage />} />
-
-          <Route path="/brakeresponse" element={<BrakeResponse />} />
         </Routes>
       </Router>
 

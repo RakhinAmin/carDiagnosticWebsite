@@ -1,0 +1,30 @@
+.registration-plate {
+  position: relative;
+}
+.frame5-image {
+  position: absolute;
+  width: 15%;
+  right: 0.5px;
+  top: 307px;
+}
+.btn-submit {
+  position: relative;
+  width: 15%;
+  right: 10px;
+}
+.image-container {
+  position: relative;
+}
+
+.image-container .background-image {
+  width: 100%;
+  height: auto;
+}
+
+.image-container .car-image {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 60%;
+  height: auto;
+}

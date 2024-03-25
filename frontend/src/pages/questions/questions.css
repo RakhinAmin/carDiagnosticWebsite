@@ -1,76 +1,55 @@
-/* Reset some default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --color-bg: #f1f1ee;
-  --color-bg-variant: #f1f1ee;
-  --color-primary: #0071fd;
-  /* Blue */
-  --color-primary-variant: #0071fd;
-  /* Darker Blue */
-  --color-accent: #ff4500;
-  /* Orange-Red */
-  --color-accent-variant: #cc3700;
-  /* Darker Orange-Red */
-  --color-white: #fff;
-  --color-light: #f8f8f8;
-  /* Light Gray */
-
-  --transition: all 400ms ease;
-
-  --container-width-lg: 50%;
-  --container-width-md: 56%;
-  --container-width-sm: 50%;
-}
-
-/* Center the content vertically and horizontally */
-body,
-html {
-  height: 60%;
-  display: inline;
-  align-items: center;
-  justify-content: center;
-}
-
 .container {
-  width: var(--container-width-sm);
-  margin: 2rem auto; /* Adjust the margin-top and margin-bottom values to reduce the height */
-}
-
-/* Style for the main title */
-.main__title {
-  font-size: 3rem;
-  color: var(--color-primary);
-  text-align: center;
-  margin-top: 4rem; /* Adjust the margin-top value to move the main title higher */
-  margin-bottom: 1rem;
-
-  @media screen and (min-width: 1200px) {
-    font-size: 5rem;
-    margin-top: 6rem; /* Adjust the margin-top value for larger screens */
-  }
-}
-
-/* Style for the buttons */
-.home__buttons {
+  width: 640px;
+  margin: auto;
+  margin-top: 150px;
+  background: white;
+  color: #262626;
   display: flex;
-  gap: 1rem; /* Adjust the gap between buttons */
-  margin-top: 2rem; /* Adjust the margin-top value to move the buttons higher */
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 1px 50px;
 }
-
-/* Style for the primary button */
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
+.container hr {
+  height: 2px;
+  border: none;
+  background: #707070;
 }
-
-/* Style for the secondary button */
-.btn-secondary {
-  background-color: var(--color-bg);
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+.container h2 {
+  font-size: 27px;
+  font-weight: 500;
+}
+.container ul li {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding-left: 15px;
+  border: 1px solid #686868;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.container button {
+  margin: auto;
+  width: 250px;
+  height: 65px;
+  background: #553f9a;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.container .index {
+  margin: auto;
+  font-size: 18px;
+}
+.container .correct {
+  background: #dffff2;
+  border-color: #00d397;
+}
+.container .wrong {
+  background: #ffebeb;
+  border-color: #ff4a4a;
 }

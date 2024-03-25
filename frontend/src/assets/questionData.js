@@ -1,0 +1,51 @@
+export const questionData = [
+    {
+        question: "Are your brakes noisy/squeaky?",
+        option1: "Yes",
+        option2: "No",
+        ans: 1,
+        problem: "Your car may have worn brake pads or discs.",
+    },
+    {
+        question: "Does your car acceleration feel slower than usual?",
+        option1: "Yes",
+        option2: "No",
+        ans: 1,
+        problem: "Your car may have issues with the fuel injectors or air intake system.",
+    },
+    {
+        question: "Does blue or grey smoke emit from your exhaust?",
+        option1: "Yes",
+        option2: "No",
+        ans: 1,
+        problem: "Your engine has worn piston rings",
+    },
+    {
+        question: "Do you smell fuel or oil in the car interior?",
+        option1: "Yes",
+        option2: "No",
+        ans: 1,
+        problem: "There is a leak in the fuel line somewhere",
+    },
+    {
+        question: "Do you hear thumps or knocks from the engine/exhaust?",
+        option1: "Yes",
+        option2: "No",
+        ans: 1,
+        problem: "Your engine may have poor tuning",
+    },
+    {
+        question: "Do you have difficulty starting your car?",
+        option1: "Yes",
+        option2: "No",
+        ans: 1,
+        problem: "You may need to replace your battery",
+    },
+    {
+        question: "Can you feel excessive vibrations in the steering wheel?",
+        option1: "Yes",
+        option2: "No",
+        ans: 1,
+        problem: "Your wheel studs or wheel bearing may be loose",
+    },
+]

@@ -11,7 +11,7 @@
 }
 
 :root {
-  --color-bg: #f1f1ee;
+  --color-bg: #dedbc8;
   --color-bg-variant: #f1f1ee;
   --color-primary: #0071fd;
   /* Blue */
@@ -169,7 +169,6 @@ img {
   font-size: 3rem;
   color: var(--color-primary);
   text-align: center;
-  margin-top: 4rem;
 
   @media screen and (min-width: 1200px) {
     font-size: 5rem;
@@ -202,7 +201,7 @@ img {
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-bg);
-  padding: 1rem;
+  margin-top: 1px;
 }
 
 .logo {
