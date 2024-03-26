@@ -4,12 +4,14 @@ import { Link } from "react-router-dom"; // Importing link component to create l
 import { motion } from "framer-motion";
 import RegistrationPlate from "../../components/registrationPlate/RegistrationPlate";
 import carDiagnosticImage from "../../assets/home_images/Car Diagnostics.svg"; // Import your image file
-// import "./home.css";
+import "./home.css";
 
 // Main functional component named App
 function App() {
   return (
-    <>
+    <div className="app-container">
+      {" "}
+      {/* This is the new container div */}
       {/* Main container for the home page */}
       <motion.div
         className="container home-page__container"
@@ -27,7 +29,7 @@ function App() {
         {/* Rendering the RectangleComponent which provides an input box and button to navigate to the chatbot page */}
         <RegistrationPlate />
       </motion.div>
-    </>
+    </div>
   );
 }
 

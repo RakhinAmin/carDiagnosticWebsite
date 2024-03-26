@@ -1,4 +1,5 @@
 .registration-plate {
+  background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjcyOHB4IiB3aWR0aD0iOTYxcHgiPgogICAgPGZpbHRlciBpZD0iZ3JhaW55Ij4KICAgICAgICA8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC42Ii8+CiAgICAgICAgPGZlQ29tcG9zaXRlIG9wZXJhdG9yPSJpbiIgaW4yPSJTb3VyY2VHcmFwaGljIiByZXN1bHQ9Im1vbm9Ob2lzZSIvPgogICAgPC9maWx0ZXI+CiAgICA8cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Ik03Ni41IDM2MS41Qy0xNC45NzUzIDI3Mi4wMjIgNTkuNDYzNCAyMTMuOTkxIDEwOC4zIDE5Ni4wNzNDMTA0LjcxMSAxOTcuMjc2IDg1LjAyODYgMTk4Ljg0NiAzMi41IDE5NkMtMzQuNSAxOTIuMzcgOS45OTk5OCAxMzUuNSAxMDguNSAxNzJDMjA3IDIwOC41IDE2NC41IDg2IDQ0NS41IDE4LjVDNzI2LjUgLTQ5IDQ1NyA4OC41IDM5MS41IDI1Mi41QzMyNiA0MTYuNSA1NDEgMjYwLjUgNjE3LjUgNDIzQzY5NCA1ODUuNSA0NzYuNSA1MDggMzU4LjUgNTcxQzI0MC41IDYzNCAxOTEgNDczLjUgNzYuNSAzNjEuNVoiIGZpbHRlcj0idXJsKCNncmFpbnkpIi8+Cjwvc3ZnPg==");
   position: relative;
 }
 .frame5-image {
@@ -9,8 +10,9 @@
 }
 .btn-submit {
   position: relative;
-  width: 15%;
-  right: 10px;
+  width: 30%;
+  left: 670px;
+  bottom: 230px;
 }
 .image-container {
   position: relative;
