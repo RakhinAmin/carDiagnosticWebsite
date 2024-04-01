@@ -5,7 +5,7 @@ import rectangleImage from "../../assets/home_images/Rectangle 3.svg";
 import astonMartinDB5Image from "../../assets/home_images/astonmartindb5.svg";
 import frame5Image from "../../assets/home_images/Frame 5.svg";
 import frame4Image from "../../assets/home_images/Frame 4.svg";
-
+import vector2Image from "../../assets/home_images/Vector 2.svg";
 import carImage from "../../assets/home_images/Group 1.svg"; // Import your new image
 import "./RegistrationPlate.css"; // Import the CSS file
 
@@ -45,6 +45,11 @@ const RegistrationPlate = () => {
 
   return (
     <div className="registration-plate">
+      <h1>We will help you find any issue that your car has</h1>
+      <div className="enter-reg">
+        <h2>Enter your reg now to find your solution</h2>
+      </div>
+      {/* Added heading */}
       <div className="image-container">
         <img
           src={rectangleImage}
@@ -56,8 +61,8 @@ const RegistrationPlate = () => {
           alt="Aston Martin DB5"
           className="car-image"
         />
+        <img src={vector2Image} alt="bottom arrow" className="bottom-arrow" />
       </div>
-
       <label>Reg Number</label>
       <input
         id="inputReg"
@@ -70,9 +75,8 @@ const RegistrationPlate = () => {
         alt="Submit"
         className="btn-submit"
         onClick={submitReg}
-        style={{ cursor: "pointer" }} // Makes the image behave like a clickable button
+        style={{ cursor: "pointer" }}
       />
-
       <div>
         {vehicleInfo && (
           <>
@@ -89,7 +93,7 @@ const RegistrationPlate = () => {
             alt="Navigate to questions"
             className="frame5-image"
             onClick={handleButtonClick}
-            style={{ cursor: "pointer" }} // This makes the cursor change to a pointer when hovering over the image
+            style={{ cursor: "pointer" }}
           />
         </Link>
       </div>

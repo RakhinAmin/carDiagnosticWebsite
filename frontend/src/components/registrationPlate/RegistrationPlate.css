@@ -1,19 +1,52 @@
 .registration-plate {
-  background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjcyOHB4IiB3aWR0aD0iOTYxcHgiPgogICAgPGZpbHRlciBpZD0iZ3JhaW55Ij4KICAgICAgICA8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC42Ii8+CiAgICAgICAgPGZlQ29tcG9zaXRlIG9wZXJhdG9yPSJpbiIgaW4yPSJTb3VyY2VHcmFwaGljIiByZXN1bHQ9Im1vbm9Ob2lzZSIvPgogICAgPC9maWx0ZXI+CiAgICA8cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Ik03Ni41IDM2MS41Qy0xNC45NzUzIDI3Mi4wMjIgNTkuNDYzNCAyMTMuOTkxIDEwOC4zIDE5Ni4wNzNDMTA0LjcxMSAxOTcuMjc2IDg1LjAyODYgMTk4Ljg0NiAzMi41IDE5NkMtMzQuNSAxOTIuMzcgOS45OTk5OCAxMzUuNSAxMDguNSAxNzJDMjA3IDIwOC41IDE2NC41IDg2IDQ0NS41IDE4LjVDNzI2LjUgLTQ5IDQ1NyA4OC41IDM5MS41IDI1Mi41QzMyNiA0MTYuNSA1NDEgMjYwLjUgNjE3LjUgNDIzQzY5NCA1ODUuNSA0NzYuNSA1MDggMzU4LjUgNTcxQzI0MC41IDYzNCAxOTEgNDczLjUgNzYuNSAzNjEuNVoiIGZpbHRlcj0idXJsKCNncmFpbnkpIi8+Cjwvc3ZnPg==");
+  background: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjcyOHB4IiB3aWR0aD0iOTZxcHgiPgogICAgPGZpbHRlciBpZD0iZ3JhaW55Ij4KICAgICAgICA8ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMC42Ii8+CiAgICAgICAgPGZlQ29tcG9zaXRlIG9wZXJhdG9yPSJpbiIgaW4yPSJTb3VyY2VHcmFwaGljIiByZXN1bHQ9Im1vbm9Ob2lzZSIvPgogICAgPC9maWx0ZXI+CiAgICA8cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Ik03Ni41IDM2MS41Qy0xNC45NzUzIDI3Mi4wMjIgNTkuNDYzNCAyMTMuOTkxIDEwOC4zIDE5Ni4wNzNDMTA0LjcxMSAxOTcuMjc2IDg1LjAyODYgMTk4Ljg0NiAzMi41IDE5NkMtMzQuNSAxOTIuMzcgOS45OTk5OCAxMzUuNSAxMDguNSAxNzJDMjA3IDIwOC41IDE2NC41IDg2IDQ0NS41IDE4LjVDNzI2LjUgLTQ5IDQ1NyA4OC41IDM5MS41IDI1Mi41QzMyNiA0MTYuNSA1NDEgMjYwLjUgNjE3LjUgNDIzQzY5NCA1ODUuNSA0NzYuNSA1MDggMzU4LjUgNTcxQzI0MC41IDYzNCAxOTEgNDczLjUgNzYuNSAzNjEuNVoiIGZpbHRlcj0idXJsKCNncmFpbnkpIi8+Cjwvc3ZnPg==");
   position: relative;
+  padding-top: 0%; /* Adjusted for responsiveness */
+  z-index: 2;
 }
+
+.registration-plate h1 {
+  position: absolute;
+  font-family: "Lora", sans-serif;
+  font-weight: 400;
+  font-size: 1.5vw; /* Adjusted for responsiveness */
+  width: 30%;
+  left: 62%; /* Adjusted for responsiveness */
+  top: 25%; /* Adjusted for responsiveness */
+  color: white;
+  text-align: left;
+  z-index: 2;
+}
+
+.enter-reg h2 {
+  position: absolute;
+  font-family: "Lora", sans-serif;
+  font-weight: 400;
+  font-size: 1vw; /* Adjusted for responsiveness */
+  width: 20%;
+  left: 62%; /* Adjusted for responsiveness */
+  top: 62%; /* Adjusted for responsiveness */
+  color: white;
+  text-align: left;
+  z-index: 2;
+}
+
 .frame5-image {
   position: absolute;
-  width: 15%;
-  right: 0.5px;
-  top: 307px;
+  width: 15.4%;
+  right: -0.1%;
+  top: 75.3%; /* Adjusted for responsiveness */
+  z-index: 2;
 }
+
 .btn-submit {
-  position: relative;
+  position: absolute;
   width: 30%;
-  left: 670px;
-  bottom: 230px;
+  left: 62%; /* Adjusted for center alignment */
+  bottom: 40%;
+  z-index: 2;
 }
+
 .image-container {
   position: relative;
 }
@@ -21,12 +54,23 @@
 .image-container .background-image {
   width: 100%;
   height: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .image-container .car-image {
   position: absolute;
-  top: 25px;
+  top: 3.125%;
   left: 0;
   width: 60%;
   height: auto;
+  z-index: 2;
+}
+
+.image-container .bottom-arrow {
+  position: absolute;
+  z-index: 2;
+  width: 5%;
+  left: 56%; /* Adjusted for responsiveness */
+  bottom: 23%; /* Adjusted for responsiveness */
 }

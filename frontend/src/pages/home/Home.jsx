@@ -22,9 +22,7 @@ function App() {
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         {/* Main title for the home page (Car Diagnostic) */}
-        <h1 className="main__title">
-          <img src={carDiagnosticImage} alt="Car Diagnostic Title" />
-        </h1>
+        <h1 className="main__title">Car Diagnostics</h1>
 
         {/* Rendering the RectangleComponent which provides an input box and button to navigate to the chatbot page */}
         <RegistrationPlate />

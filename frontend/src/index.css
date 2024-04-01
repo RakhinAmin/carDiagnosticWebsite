@@ -165,17 +165,6 @@ img {
 
 /* ============ HOME PAGE ============ */
 
-.main__title {
-  font-size: 3rem;
-  color: var(--color-primary);
-  text-align: center;
-
-  @media screen and (min-width: 1200px) {
-    font-size: 5rem;
-    margin-top: 6rem;
-  }
-}
-
 .home__buttons {
   display: flex;
   align-items: center;

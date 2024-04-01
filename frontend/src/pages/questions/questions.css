@@ -15,10 +15,7 @@
   border: none;
   background: #707070;
 }
-.container h2 {
-  font-size: 27px;
-  font-weight: 500;
-}
+
 .container ul li {
   display: flex;
   align-items: center;
