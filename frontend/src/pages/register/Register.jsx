@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { register, reset } from "../../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../../components/Spinner";
+import backgroundImage from "../../assets/register_images/hondansx.jpg";
+import "./register.css";
 
 const RegisterPage = () => {
   // Initialising state for storing necessary form data (first name, last name, email password, retype password) using useState hook
@@ -80,17 +82,21 @@ const RegisterPage = () => {
   return (
     <>
       {/* Container for the registration form */}
-      <div className="container auth__container">
+      <div className="register_container">
+        <img
+          src={backgroundImage}
+          alt="Background"
+          className="register_image"
+        />
         {/* Title for the registration form */}
-        <h1 className="main__title">
-          Register <BiUser />{" "}
-        </h1>
+        <h1 className="register_title">Register</h1>
+        <h2 className="register_subtitle">Please enter new credentials</h2>
 
         {/* Displaying a spinner if the registration is in progress */}
         {isLoading && <Spinner />}
 
         {/* Registration form */}
-        <form className="auth__form">
+        <form className="firstname_box">
           {/* Input field for First Name */}
           <input
             type="text"
@@ -100,7 +106,8 @@ const RegisterPage = () => {
             value={first_name} // Sets input value into a React controllable state used in userData
             required
           />
-
+        </form>
+        <form className="lastname_box">
           {/* Input field for Last Name */}
           <input
             type="text"
@@ -110,8 +117,9 @@ const RegisterPage = () => {
             value={last_name} // Sets input value into a React controllable state used in userData
             required
           />
-
-          {/* Input field for Email */}
+        </form>
+        {/* Input field for Email */}
+        <form className="email_box">
           <input
             type="email"
             placeholder="Email"
@@ -120,8 +128,9 @@ const RegisterPage = () => {
             value={email} // Turns value into a React controllable state
             required
           />
-
-          {/* Input field for Password */}
+        </form>
+        {/* Input field for Password */}
+        <form className="password_box">
           <input
             type="password"
             placeholder="Password"
@@ -130,8 +139,10 @@ const RegisterPage = () => {
             value={password} // Sets input value into a React controllable state
             required
           />
+        </form>
 
-          {/* Input field to re-enter the Password */}
+        {/* Input field to re-enter the Password */}
+        <form className="retype_password_box">
           <input
             type="password"
             placeholder="Retype Password"
@@ -140,16 +151,16 @@ const RegisterPage = () => {
             value={re_password} // Sets input value into a React controllable state
             required
           />
-
-          {/* Button to submit the registration form */}
-          <button
-            className="btn btn-primary"
-            type="submit"
-            onClick={handleSubmit} // Calls the handleSubmit function when the button is clicked
-          >
-            Register
-          </button>
         </form>
+
+        {/* Button to submit the registration form */}
+        <button
+          className="register_button"
+          type="submit"
+          onClick={handleSubmit} // Calls the handleSubmit function when the button is clicked
+        >
+          Register
+        </button>
       </div>
     </>
   );

@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux"; // Importing Redux hooks
 import { login, reset, getUserInfo } from "../../features/auth/authSlice"; // Importing actions from authSlice
 import { toast } from "react-toastify"; // Importing toast notifications library
 import Spinner from "../../components/Spinner"; // Importing a Spinner component
+import backgroundImage from "../../assets/login_images/lancia037.jpg";
+import "./login.css";
 
 // Functional component representing the Login page
 const LoginPage = () => {
@@ -75,17 +77,19 @@ const LoginPage = () => {
   return (
     <>
       {/* Container for the login page */}
-      <div className="container auth__container">
+      <div className="login_container">
         {/* Title for the login page with an imported login icon */}
-        <h1 className="main__title">
-          Login <BiLogInCircle />
-        </h1>
+        <img src={backgroundImage} alt="Background" className="login_image" />
+        <h1 className="login_title">Welcome back!</h1>
+        <h2 className="login_subtitle">
+          Please enter your credentials below to log in.
+        </h2>
 
         {/* Displaying a spinner from the spinner file and library when data is loading */}
         {isLoading && <Spinner />}
 
         {/* Form for user login */}
-        <form className="auth__form">
+        <form className="email_box">
           {/* Input field for email */}
           <input
             type="text"
@@ -94,8 +98,9 @@ const LoginPage = () => {
             onChange={handleChange} // Calls upon handle change event to update the current form data and therefore the current state/event
             value={email}
             required
-          />
-
+          />{" "}
+        </form>
+        <form className="password_box">
           {/* Input field for password */}
           <input
             type="password"
@@ -105,19 +110,21 @@ const LoginPage = () => {
             value={password} // Turns password value into a React controllable state
             required // Validation to show that password is required
           />
-
-          {/* Link to the "Forgot Password?" page */}
-          <Link to="/reset-password">Forgot Password?</Link>
-
-          {/* Submit button for user login */}
-          <button
-            className="btn btn-primary"
-            type="submit"
-            onClick={handleSubmit} // Calls handleSubmit to prevent page refresh
-          >
-            Login
-          </button>
         </form>
+
+        {/* Link to the "Forgot Password?" page */}
+        <Link to="/reset-password" className="forgot_password">
+          Forgot Password?
+        </Link>
+
+        {/* Submit button for user login */}
+        <button
+          className="login_button"
+          type="submit"
+          onClick={handleSubmit} // Calls handleSubmit to prevent page refresh
+        >
+          Login
+        </button>
       </div>
     </>
   );
