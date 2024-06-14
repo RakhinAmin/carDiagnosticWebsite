@@ -216,36 +216,6 @@ img {
   color: var(--color-white);
 }
 
-/* ============ Auth pages (Login, Register, Reset) ============ */
-
-/* .auth__container .main__title {
-  font-size: 3rem;
-
-  @media screen and (min-width: 1200px) {
-    margin: 3rem 0;
-  }
-}
-
-.auth__container .main__title {
-  font-size: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.auth__container .main__title svg {
-  margin-left: 10px;
-  /* Add some space between the icon and the text */
-/* }
-
-.btn-activate-account {
-  margin: auto;
-  display: block;
-  margin-top: 5rem;
-  font-size: 2rem;
-  padding: 2rem;
-} */
-
 /* ============ COMPONENTS ============ */
 
 /* ============ Spinner ============ */

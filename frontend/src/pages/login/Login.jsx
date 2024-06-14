@@ -7,7 +7,6 @@ import { login, reset, getUserInfo } from "../../features/auth/authSlice"; // Im
 import { toast } from "react-toastify"; // Importing toast notifications library
 import Spinner from "../../components/Spinner"; // Importing a Spinner component
 import backgroundImage from "../../assets/login_images/lancia037.jpg";
-import "./login.css";
 
 // Functional component representing the Login page
 const LoginPage = () => {
@@ -76,55 +75,189 @@ const LoginPage = () => {
   // Visual content that is rendered
   return (
     <>
-      {/* Container for the login page */}
-      <div className="login_container">
-        {/* Title for the login page with an imported login icon */}
-        <img src={backgroundImage} alt="Background" className="login_image" />
-        <h1 className="login_title">Welcome back!</h1>
-        <h2 className="login_subtitle">
-          Please enter your credentials below to log in.
-        </h2>
-
-        {/* Displaying a spinner from the spinner file and library when data is loading */}
-        {isLoading && <Spinner />}
-
-        {/* Form for user login */}
-        <form className="email_box">
-          {/* Input field for email */}
-          <input
-            type="text"
-            placeholder="email"
-            name="email"
-            onChange={handleChange} // Calls upon handle change event to update the current form data and therefore the current state/event
-            value={email}
-            required
-          />{" "}
-        </form>
-        <form className="password_box">
-          {/* Input field for password */}
-          <input
-            type="password"
-            placeholder="password" // Indication to user that a password must be typed
-            name="password"
-            onChange={handleChange} // Calls upon handle change event to update the current form data and therefore the current state/event
-            value={password} // Turns password value into a React controllable state
-            required // Validation to show that password is required
-          />
-        </form>
-
-        {/* Link to the "Forgot Password?" page */}
-        <Link to="/reset-password" className="forgot_password">
-          Forgot Password?
-        </Link>
-
-        {/* Submit button for user login */}
-        <button
-          className="login_button"
-          type="submit"
-          onClick={handleSubmit} // Calls handleSubmit to prevent page refresh
+      <div
+        className="login_container"
+        style={{
+          display: "flex", // Retain flex properties
+          justifyContent: "center", // Center the content horizontally
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <div
+          className="inner_container"
+          style={{
+            backgroundColor: "#24242a", // Background color of the rectangle
+            width: "70vw", // Specific width of the rectangle
+            height: "40vw",
+            borderRadius: "30px",
+            justifyContent: "space-between",
+            alignItems: "center",
+            display: "flex", // Add flex to align child elements
+          }}
         >
-          Login
-        </button>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              width: "35vw",
+              height: "40vw",
+              overflow: "hidden",
+            }}
+          >
+            {/* Title for the login page with an imported login icon */}
+            <img
+              src={backgroundImage}
+              alt="Background"
+              className="login_image"
+              style={{
+                display: "flex",
+                borderRadius: "30px 0 0 30px",
+                width: "100%",
+                height: "auto",
+              }}
+            />
+            {/* Displaying a spinner from the spinner file and library when data is loading */}
+            {isLoading && <Spinner />}
+          </div>
+          <div style={{ justifyContent: "flex-end", width: "45%" }}>
+            <h1
+              className="login_title"
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                flexDirection: "column",
+                fontSize: "4vh",
+                fontFamily: "lora",
+                color: "white",
+              }}
+            >
+              Welcome back!
+            </h1>
+            <h2
+              className="login_subtitle"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+                fontSize: "2vh",
+                fontFamily: "lora",
+                color: "white",
+                maxWidth: "85%",
+                marginBottom: "5vh",
+              }}
+            >
+              Please enter your credentials below to log in.
+            </h2>
+            <form
+              className=""
+              style={{
+                alignItems: "center",
+                padding: 0,
+                backgroundColor: "white",
+                display: "flex",
+                width: "85%", // Make form width 100% to cover the entire rectangle
+                borderRadius: "10px",
+                justifyContent: "flex-end", // Align to the right
+                marginBottom: "5vh",
+              }}
+            >
+              {/* Input field for email */}
+              <input
+                type="text"
+                placeholder="email"
+                name="email"
+                onChange={handleChange}
+                value={email}
+                required
+                style={{
+                  padding: 12,
+                  borderRadius: "10px",
+                  borderWidth: 0,
+                  width: "100%",
+                  borderColor: "white",
+                  backgroundColor: "white",
+                  fontFamily: "lora",
+                }}
+              />
+            </form>
+
+            {/* Another form for password */}
+            <form
+              className=""
+              style={{
+                alignItems: "center",
+                padding: 0,
+                backgroundColor: "white",
+                display: "flex",
+                width: "85%", // Make form width 100% to cover the entire rectangle
+                borderRadius: "10px",
+                justifyContent: "flex-end", // Align to the right
+                marginBottom: "1vh",
+              }}
+            >
+              {/* Input field for password */}
+              <input
+                type="password" // Change input type to "password"
+                placeholder="password"
+                name="password"
+                onChange={handleChange}
+                value={password} // Use password instead of email for input value
+                required
+                style={{
+                  padding: 12,
+                  borderRadius: "10px",
+                  borderWidth: 0,
+                  width: "100%",
+                  borderColor: "white",
+                  backgroundColor: "white",
+                  fontFamily: "lora",
+                }}
+              />
+            </form>
+
+            {/* Link to the "Forgot Password?" page */}
+            <div style={{ justifyContent: "flex-end", width: "85%" }}>
+              <Link
+                to="/reset-password"
+                className="forgot_password"
+                style={{
+                  fontFamily: "lora",
+                  color: "white",
+                  display: "flex",
+                  marginBottom: "1vh",
+                  justifyContent: "flex-end",
+                }}
+              >
+                Forgot Password?
+              </Link>
+            </div>
+
+            {/* Submit button for user login */}
+            <button
+              className="login_button"
+              type="submit"
+              onClick={handleSubmit}
+              style={{
+                fontFamily: "lora",
+                fontSize: "2vh",
+                color: "white",
+                height: "5vh",
+                width: "10vw",
+                backgroundColor: "#d5600f",
+                borderRadius: "10px",
+                borderWidth: "0",
+                borderColor: "#d5600f",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              Login
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

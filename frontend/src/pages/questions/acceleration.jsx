@@ -6,25 +6,37 @@ import { motion } from "framer-motion";
 function AccelerationPage() {
   return (
     <>
-      <motion.div
-        className="container home-page__container"
-        initial={{ y: "100vw" }}
-        animate={{ y: 0 }}
-        exit={{ y: "-100vw" }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+      <div
+        className="question_container"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
       >
-        <h1 className="main__title">
-          Do you experience sluggish acceleration?
-        </h1>
+        <div
+          className="inner_container"
+          style={{
+            backgroundColor: "#24242a",
+            width: "70vw",
+            height: "50vw",
+            borderRadius: "30px",
+          }}
+        >
+          <h1 className="main__title">
+            Do you experience sluggish acceleration?
+          </h1>
 
-        <div className="home__buttons">
-          <Link to="/smells">
-            <div className="btn btn-primary">Yes</div>
-            <div className="btn btn-secondary">No</div>
-          </Link>
+          <div className="home__buttons">
+            <Link to="/smells">
+              <div className="btn btn-primary">Yes</div>
+              <div className="btn btn-secondary">No</div>
+            </Link>
+          </div>
+          <Link to="/smokyexhaust">Go back</Link>
         </div>
-      </motion.div>
-      <Link to="/smokyexhaust">Go back</Link>
+      </div>
     </>
   );
 }

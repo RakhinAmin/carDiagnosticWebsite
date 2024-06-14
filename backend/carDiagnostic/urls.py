@@ -1,6 +1,5 @@
 """
 URL configuration for carDiagnostic project.
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
 Examples:
@@ -16,7 +15,7 @@ Including another URLconf
 """
 # Importing necessary modules from Django
 from django.contrib import admin
-# Path defines the route of a URL to the corresponding page
+# Path defines the route of a URL to the corresponding page, include defines any external URL configurations
 from django.urls import path, include
 
 # Defining URL patterns for the Django application
@@ -27,7 +26,6 @@ urlpatterns = [
     # API endpoints for authentication using Djoser
     path('api/v1/auth/', include('djoser.urls')),
 
-    # API endpoint for question responses
-    path('api/v1/questions/', include('questions.urls')),
-
+    # Additional API endpoints for JWT authentication using Djoser
+    path('api/v1/auth/', include('djoser.urls.jwt')),
 ]

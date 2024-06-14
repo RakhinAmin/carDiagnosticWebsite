@@ -6,7 +6,6 @@ import { register, reset } from "../../features/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../../components/Spinner";
 import backgroundImage from "../../assets/register_images/hondansx.jpg";
-import "./register.css";
 
 const RegisterPage = () => {
   // Initialising state for storing necessary form data (first name, last name, email password, retype password) using useState hook
@@ -81,86 +80,262 @@ const RegisterPage = () => {
 
   return (
     <>
-      {/* Container for the registration form */}
-      <div className="register_container">
-        <img
-          src={backgroundImage}
-          alt="Background"
-          className="register_image"
-        />
-        {/* Title for the registration form */}
-        <h1 className="register_title">Register</h1>
-        <h2 className="register_subtitle">Please enter new credentials</h2>
-
-        {/* Displaying a spinner if the registration is in progress */}
-        {isLoading && <Spinner />}
-
-        {/* Registration form */}
-        <form className="firstname_box">
-          {/* Input field for First Name */}
-          <input
-            type="text"
-            placeholder="First Name"
-            name="first_name"
-            onChange={handleChange} // Calls the handleChange function to update the state with the entered value
-            value={first_name} // Sets input value into a React controllable state used in userData
-            required
-          />
-        </form>
-        <form className="lastname_box">
-          {/* Input field for Last Name */}
-          <input
-            type="text"
-            placeholder="Last Name"
-            name="last_name"
-            onChange={handleChange} // Calls upon handle change event to update the current form data and therefore the current state/event
-            value={last_name} // Sets input value into a React controllable state used in userData
-            required
-          />
-        </form>
-        {/* Input field for Email */}
-        <form className="email_box">
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            onChange={handleChange} // Calls upon handle change event to update the current form data and therefore the current state/event
-            value={email} // Turns value into a React controllable state
-            required
-          />
-        </form>
-        {/* Input field for Password */}
-        <form className="password_box">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            onChange={handleChange} // Calls upon handle change event to update the current form data and therefore the current state/event
-            value={password} // Sets input value into a React controllable state
-            required
-          />
-        </form>
-
-        {/* Input field to re-enter the Password */}
-        <form className="retype_password_box">
-          <input
-            type="password"
-            placeholder="Retype Password"
-            name="re_password"
-            onChange={handleChange} // Calls upon handle change event to update the current form data and therefore the current state/event
-            value={re_password} // Sets input value into a React controllable state
-            required
-          />
-        </form>
-
-        {/* Button to submit the registration form */}
-        <button
-          className="register_button"
-          type="submit"
-          onClick={handleSubmit} // Calls the handleSubmit function when the button is clicked
+      <div
+        className="register_container"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <div
+          className="inner_container"
+          style={{
+            backgroundColor: "#24242a",
+            width: "70vw",
+            height: "40vw",
+            borderRadius: "30px",
+            justifyContent: "space-between",
+            alignItems: "center",
+            display: "flex",
+          }}
         >
-          Register
-        </button>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-start",
+              width: "35vw",
+              height: "40vw",
+              overflow: "hidden",
+            }}
+          >
+            <img
+              src={backgroundImage}
+              alt="Background"
+              className="register_image"
+              style={{
+                display: "flex",
+                borderRadius: "30px 0 0 30px",
+                width: "100%",
+                height: "auto",
+              }}
+            />
+          </div>
+          <div style={{ justifyContent: "flex-end", width: "45%" }}>
+            <h1
+              className="register_title"
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                flexDirection: "column",
+                fontSize: "4vh",
+                fontFamily: "lora",
+                color: "white",
+              }}
+            >
+              Welcome!
+            </h1>
+            <h2
+              className="login_subtitle"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+                fontSize: "2vh",
+                fontFamily: "lora",
+                color: "white",
+                maxWidth: "85%",
+                marginBottom: "5vh",
+              }}
+            >
+              Please enter new credentials
+            </h2>
+            {/* Form for first name */}
+            <form
+              className=""
+              style={{
+                alignItems: "center",
+                padding: 0,
+                backgroundColor: "white",
+                display: "flex",
+                width: "85%",
+                borderRadius: "10px",
+                justifyContent: "flex-start",
+                marginBottom: "5vh",
+              }}
+            >
+              <input
+                type="text"
+                placeholder="First name"
+                name="first_name"
+                onChange={handleChange}
+                value={first_name}
+                required
+                style={{
+                  padding: 12,
+                  borderRadius: "10px",
+                  borderWidth: 0,
+                  width: "100%",
+                  borderColor: "white",
+                  backgroundColor: "white",
+                  fontFamily: "lora",
+                }}
+              />
+            </form>
+            {/* Form for last name */}
+            <form
+              className=""
+              style={{
+                alignItems: "center",
+                padding: 0,
+                backgroundColor: "white",
+                display: "flex",
+                width: "85%",
+                borderRadius: "10px",
+                justifyContent: "flex-start",
+                marginBottom: "5vh",
+              }}
+            >
+              <input
+                type="text"
+                placeholder="Last name"
+                name="last_name"
+                onChange={handleChange}
+                value={last_name}
+                required
+                style={{
+                  padding: 12,
+                  borderRadius: "10px",
+                  borderWidth: 0,
+                  width: "100%",
+                  borderColor: "white",
+                  backgroundColor: "white",
+                  fontFamily: "lora",
+                }}
+              />
+            </form>
+            {/* Form for email */}
+            <form
+              className=""
+              style={{
+                alignItems: "center",
+                padding: 0,
+                backgroundColor: "white",
+                display: "flex",
+                width: "85%",
+                borderRadius: "10px",
+                justifyContent: "flex-end",
+                marginBottom: "5vh",
+              }}
+            >
+              <input
+                type="text"
+                placeholder="email"
+                name="email"
+                onChange={handleChange}
+                value={email}
+                required
+                style={{
+                  padding: 12,
+                  borderRadius: "10px",
+                  borderWidth: 0,
+                  width: "100%",
+                  borderColor: "white",
+                  backgroundColor: "white",
+                  fontFamily: "lora",
+                }}
+              />
+            </form>
+            {/* Form for password */}
+            <form
+              className=""
+              style={{
+                alignItems: "center",
+                padding: 0,
+                backgroundColor: "white",
+                display: "flex",
+                width: "85%",
+                borderRadius: "10px",
+                justifyContent: "flex-end",
+                marginBottom: "5vh",
+              }}
+            >
+              <input
+                type="text"
+                placeholder="password"
+                name="password"
+                onChange={handleChange}
+                value={password}
+                required
+                style={{
+                  padding: 12,
+                  borderRadius: "10px",
+                  borderWidth: 0,
+                  width: "100%",
+                  borderColor: "white",
+                  backgroundColor: "white",
+                  fontFamily: "lora",
+                }}
+              />
+            </form>
+            {/* Form for retype password */}
+            <form
+              className=""
+              style={{
+                alignItems: "center",
+                padding: 0,
+                backgroundColor: "white",
+                display: "flex",
+                width: "85%",
+                borderRadius: "10px",
+                justifyContent: "flex-end",
+                marginBottom: "5vh",
+              }}
+            >
+              <input
+                type="text"
+                placeholder="Retype password"
+                name="re_password"
+                onChange={handleChange}
+                value={re_password}
+                required
+                style={{
+                  padding: 12,
+                  borderRadius: "10px",
+                  borderWidth: 0,
+                  width: "100%",
+                  borderColor: "white",
+                  backgroundColor: "white",
+                  fontFamily: "lora",
+                }}
+              />
+            </form>
+            {/* Submit button for user registration */}
+            <button
+              className="register_button"
+              type="submit"
+              onClick={handleSubmit}
+              style={{
+                fontFamily: "lora",
+                fontSize: "2vh",
+                color: "white",
+                height: "5vh",
+                width: "10vw",
+                backgroundColor: "#d5600f",
+                borderRadius: "10px",
+                borderWidth: "0",
+                borderColor: "#d5600f",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                cursor: "pointer",
+              }}
+            >
+              Register
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

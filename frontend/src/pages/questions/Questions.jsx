@@ -26,41 +26,36 @@ export const Questions = () => {
 
   // Function to check the user's answer
   const checkAns = (e, ans) => {
-    //e represents the event object when one of the buttons is clicked
     if (lock === false) {
-      // lock prevents user from answering twice
       if (question.ans === ans) {
-        // if answer matches correct answer
-        e.target.classList.add("correct"); // add green css class to show as "yes"
-        setLock(true); //set lock to true to prevent further answering
-        setScore((prev) => prev + 1); //add one score to the user score
+        e.target.classList.add("correct");
+        setScore((prev) => prev + 1);
       } else {
-        e.target.classList.add("wrong"); // add wrong css red styling for the "no answer"
-        setLock(true); //set lock to true to prevent further answering
+        e.target.classList.add("wrong");
         option_array[question.ans - 1].current.classList.add("correct");
       }
-      setAnswers([...answers, ans]); //append chosen answer to the answers array
+      setLock(true);
+      setAnswers([...answers, ans]);
+      // Move to the next question after a short delay
+      setTimeout(() => {
+        next();
+      }, 0); // 0.5 second delay before moving to the next question
     }
   };
 
   // Function to move to the next question
   const next = () => {
-    if (lock === true) {
-      if (index === questionData.length - 1) {
-        // check if question is last question in the array
-        setResult(true); //indication of quiz completion
-        return; // return stops further questions
-      }
-      setIndex((prevIndex) => prevIndex + 1); //update index of question by adding 1
-      setQuestion(questionData[index + 1]); //updates question state with next question from array
-      setLock(false);
-      // Resetting styles for options
-      option_array.forEach((option) => {
-        //iterate through each option and reset styling for yes and no
-        option.current.classList.remove("wrong");
-        option.current.classList.remove("correct");
-      });
+    if (index === questionData.length - 1) {
+      setResult(true);
+      return;
     }
+    setIndex((prevIndex) => prevIndex + 1);
+    setQuestion(questionData[index + 1]);
+    setLock(false);
+    option_array.forEach((option) => {
+      option.current.classList.remove("wrong");
+      option.current.classList.remove("correct");
+    });
   };
 
   // Function to reset the quiz by resetting every state to default value
@@ -81,81 +76,136 @@ export const Questions = () => {
 
   // JSX rendering
   return (
-    <div className="container">
-      <h1>Diagnostic Questions</h1>
-      <hr />
-      {result ? (
-        <></> // Render nothing when the quiz is completed
-      ) : (
-        <>
-          {/* Render the current question */}
-          <h2>
-            {index + 1}. {question.question}
-          </h2>
-          <ul>
-            {/* Render options as list items */}
-            <li
-              ref={Option1}
-              onClick={(e) => {
-                checkAns(e, 1); //set event object to 1 for use in checkans
-              }}
-            >
-              {question.option1}
-            </li>
-            <li
-              ref={Option2}
-              onClick={(e) => {
-                checkAns(e, 2); //set event object to 2 for use in checkans
-              }}
-            >
-              {question.option2}
-            </li>
-          </ul>
-          {/* Button to move to the next question */}
-          <button onClick={next}>Next</button>
-          <div className="index">
-            {index + 1} of {questionData.length} questions
-          </div>
-        </>
-      )}
-      {/* Display the result and provide options for resetting or viewing car issues */}
-      {result ? (
-        <>
-          <h2>
-            You have {score} out of {questionData.length} problems with your car
-          </h2>
-          <button onClick={reset}>Reset your choices</button>
-          <button onClick={viewCarIssues}>View your car issues</button>
-        </>
-      ) : (
-        <></>
-      )}
-      {/* Display car issues if the flag is set */}
-      {displayIssues && (
-        <div className="issues-container">
-          <h2>Car Issues:</h2>
-          <ul>
-            {/* Map through answers to display corresponding car issues */}
-            {answers.map((answer, index) => {
-              const selectedQuestion = questionData[index];
-              return answer === 1 ? (
-                <li key={index}>{selectedQuestion.problem}</li>
-              ) : null;
-            })}
-          </ul>
+    <div
+      className="flex_container"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
+      <div
+        className="inner_container"
+        style={{
+          backgroundColor: "#24242a",
+          width: "70vw",
+          height: "40vw",
+          borderRadius: "30px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "20px",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+            width: "50%",
+          }}
+        >
+          {result ? (
+            <></>
+          ) : (
+            <>
+              <h2 style={{ fontFamily: "lora", color: "white" }}>
+                {index + 1}. {question.question}
+              </h2>
+              <ul style={{ listStyleType: "none", padding: 0 }}>
+                <li
+                  style={{
+                    fontFamily: "lora",
+                    color: "white",
+                    height: "5vh",
+                    width: "5vw",
+                    backgroundColor: "#d5600f",
+                    borderRadius: "10px",
+                    borderWidth: "0",
+                    borderColor: "#d5600f",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    cursor: "pointer",
+                    marginBottom: "3vh",
+                  }}
+                  ref={Option1}
+                  onClick={(e) => {
+                    checkAns(e, 1);
+                  }}
+                >
+                  {question.option1}
+                </li>
+                <li
+                  style={{
+                    fontFamily: "lora",
+                    color: "black",
+                    height: "5vh",
+                    width: "5vw",
+                    backgroundColor: "white",
+                    borderRadius: "10px",
+                    borderWidth: "0",
+                    borderColor: "white",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    cursor: "pointer",
+                  }}
+                  ref={Option2}
+                  onClick={(e) => {
+                    checkAns(e, 2);
+                  }}
+                >
+                  {question.option2}
+                </li>
+              </ul>
+              <div
+                className="index"
+                style={{
+                  fontFamily: "lora",
+                  color: "white",
+                  marginTop: "20px",
+                }}
+              >
+                {index + 1} / {questionData.length} questions
+              </div>
+            </>
+          )}
         </div>
-      )}
-      {/* Container for home page buttons */}
-      <div className="home__buttons">
-        {/* Link to navigate to the login page */}
-        <Link to="/login" className="btn btn-secondary">
-          Login
-        </Link>
-
-        {/* Link to navigate to the register page */}
-        <Link to="/register" className="btn btn-primary">
-          Sign up
-        </Link>
+        {result ? (
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              textAlign: "center",
+            }}
+          >
+            <h2>
+              You have {score} out of {questionData.length} problems with your
+              car
+            </h2>
+            <button onClick={reset}>Reset your choices</button>
+            <button onClick={viewCarIssues}>View your car issues</button>
+          </div>
+        ) : null}
+        {displayIssues && (
+          <div className="issues-container">
+            <h2>Car Issues:</h2>
+            <ul>
+              {answers.map((answer, index) => {
+                const selectedQuestion = questionData[index];
+                return answer === 1 ? (
+                  <li key={index}>{selectedQuestion.problem}</li>
+                ) : null;
+              })}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
